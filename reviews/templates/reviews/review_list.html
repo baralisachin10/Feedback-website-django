@@ -1,0 +1,25 @@
+{% extends "reviews/base.html" %}
+
+{% block page_title %}
+All reviews
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="text-center text-muted mt-5">
+        Person who respond
+    </h2>
+    <div class="row justify-content-center">
+        <div class="col-md-4 shadow-lg mt-2 py-2">
+            <ul class="list-group list-group-flush">
+                {% for review in reviews %}
+                    <li class="list-group-item">{{review.user_name}} (Rating: {{review.rating}})</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
